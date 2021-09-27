@@ -23,14 +23,14 @@ WORKDIR $HOME
 
 ADD ./add_stuff/ $INST_SCRIPTS/
 ADD ./bin_new/ /usr/bin/
-USER root
-RUN chmod a+x /usr/bin/geckodriver
+#USER root
+#RUN chmod a+x /usr/bin/geckodriver
 RUN cp /usr/bin/geckodriver /usr/bin/geckodriver13
 
-RUN find $INST_SCRIPTS -name '*.sh' -exec chmod a+x {} +
+#RUN find $INST_SCRIPTS -name '*.sh' -exec chmod a+x {} +
 #RUN find  /usr/bin -name '*geckodrive' -exec chmod a+x {} +
 #ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
-USER headless
+#USER headless
 ### Install some common tools
 #RUN $INST_SCRIPTS/install_tools.sh
 
