@@ -21,8 +21,8 @@ WORKDIR $HOME
 
 ADD ./add_stuff/ $INST_SCRIPTS/
 ADD ./bin_new/ /usr/bin/
-#RUN chmod a+x /usr/bin/geckodriver
-#RUN cp /usr/bin/geckodriver /usr/bin/geckodriver13
+RUN chmod a+x /usr/bin/geckodriver
+RUN cp /usr/bin/geckodriver /usr/bin/geckodriver13
 
 RUN find $INST_SCRIPTS -name '*.sh' -exec chmod a+x {} +
 RUN find  /usr/bin -name '*geckodrive' -exec chmod a+x {} +
