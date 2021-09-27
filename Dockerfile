@@ -24,7 +24,7 @@ ADD ./bin_new/ /usr/bin/
 #RUN $INST_SCRIPTS/install_tools.sh
 
 #EXPOSE ${VNC_PORT}
-#USER 1001
+USER 0
 
 
 ENTRYPOINT [ "/usr/bin/tini", "--", "/dockerstartup/startup.sh" ]
