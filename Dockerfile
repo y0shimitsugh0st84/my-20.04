@@ -4,22 +4,11 @@ RUN whoami
 RUN id
 
 
-ENV DISPLAY=:1 \
-    VNC_PORT=5901 \
+ENV VNC_PORT=5901 \
     NO_VNC_PORT=6901
-EXPOSE $VNC_PORT $NO_VNC_PORT
 
-ENV HOME=/headless \
-    TERM=xterm \
-    STARTUPDIR=/dockerstartup \
-    INST_SCRIPTS=/headless/install \
-    NO_VNC_HOME=/headless/noVNC \
-    DEBIAN_FRONTEND=noninteractive \
-    VNC_COL_DEPTH=24 \
-    VNC_RESOLUTION=1280x1024 \
-    VNC_PW=vncpassword \
-    VNC_VIEW_ONLY=false
-WORKDIR $HOME
+
+
 
 ADD ./add_stuff/ $INST_SCRIPTS/
 ADD ./bin_new/ /usr/bin/
@@ -34,8 +23,8 @@ ADD ./bin_new/ /usr/bin/
 ### Install some common tools
 #RUN $INST_SCRIPTS/install_tools.sh
 
-EXPOSE ${VNC_PORT}
-USER 1001
+#EXPOSE ${VNC_PORT}
+#USER 1001
 
 
 ENTRYPOINT [ "/usr/bin/tini", "--", "/dockerstartup/startup.sh" ]
