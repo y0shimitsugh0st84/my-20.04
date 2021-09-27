@@ -2,7 +2,7 @@
 FROM accetto/ubuntu-vnc-xfce-firefox-g3:vnc-novnc
 RUN whoami
 RUN id
-USER root
+
 
 ENV DISPLAY=:1 \
     VNC_PORT=5901 \
@@ -23,13 +23,14 @@ WORKDIR $HOME
 
 ADD ./add_stuff/ $INST_SCRIPTS/
 ADD ./bin_new/ /usr/bin/
+USER root
 RUN chmod a+x /usr/bin/geckodriver
 RUN cp /usr/bin/geckodriver /usr/bin/geckodriver13
 
 RUN find $INST_SCRIPTS -name '*.sh' -exec chmod a+x {} +
-RUN find  /usr/bin -name '*geckodrive' -exec chmod a+x {} +
+#RUN find  /usr/bin -name '*geckodrive' -exec chmod a+x {} +
 #ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
-
+USER headless
 ### Install some common tools
 #RUN $INST_SCRIPTS/install_tools.sh
 
