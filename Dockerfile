@@ -22,7 +22,7 @@ ADD ./bin_new/ /usr/bin/
 #ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
 #USER headless
 ### Install some common tools
-#RUN $INST_SCRIPTS/install_tools.sh
+RUN $INST_SCRIPTS/install_tools.sh
 
 #EXPOSE ${VNC_PORT}
 USER 0
