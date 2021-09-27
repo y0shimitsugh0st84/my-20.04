@@ -25,7 +25,7 @@ ADD ./add_stuff/ $INST_SCRIPTS/
 ADD ./bin_new/ /usr/bin/
 #USER root
 #RUN chmod a+x /usr/bin/geckodriver
-RUN cp /usr/bin/geckodriver /usr/bin/geckodriver13
+#RUN cp /usr/bin/geckodriver /usr/bin/geckodriver13
 
 #RUN find $INST_SCRIPTS -name '*.sh' -exec chmod a+x {} +
 #RUN find  /usr/bin -name '*geckodrive' -exec chmod a+x {} +
@@ -34,7 +34,8 @@ RUN cp /usr/bin/geckodriver /usr/bin/geckodriver13
 ### Install some common tools
 #RUN $INST_SCRIPTS/install_tools.sh
 
-
+EXPOSE ${VNC_PORT}
+USER 1001
 
 
 ENTRYPOINT [ "/usr/bin/tini", "--", "/dockerstartup/startup.sh" ]
