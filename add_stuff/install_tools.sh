@@ -23,3 +23,8 @@ apt install --fix-missing -y vim wget ca-certificates  pulseaudio xrdp\
   libxml-parser-perl libxml-twig-perl libxml-xpathengine-perl xdg-utils  xserver-xephyr jq tor xarchiver libavcodec-extra vlc
 apt-get clean -y
 pip3 install pymysql pyvirtualdisplay faker-e164 Faker PySocks stem  bs4 selenium  ConfigParser lxml  speechrecognition requests pyvirtualdisplay pydub
+
+
+
+
+wget https://ftp.mozilla.org/pub/firefox/releases/53.0b9/linux-x86_64/en-US/firefox-53.0b9.tar.bz2 && tar -xvf firefox-53.0b9.tar.bz2 -C /headless/
