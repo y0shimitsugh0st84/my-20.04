@@ -21,3 +21,5 @@ apt install --fix-missing -y vim wget ca-certificates  pulseaudio xrdp\
   fonts-liberation libappindicator3-1 libfile-basedir-perl libfile-desktopentry-perl libfile-mimeinfo-perl \
   libindicator3-7  libipc-system-simple-perl libnet-dbus-perl libtie-ixhash-perl libx11-protocol-perl \
   libxml-parser-perl libxml-twig-perl libxml-xpathengine-perl xdg-utils  xserver-xephyr jq tor xarchiver libavcodec-extra vlc
+apt-get clean -y
+pip3 install pymysql pyvirtualdisplay faker-e164 Faker PySocks stem  bs4 selenium  ConfigParser lxml  speechrecognition requests pyvirtualdisplay pydub
