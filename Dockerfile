@@ -1,5 +1,6 @@
 
 FROM accetto/ubuntu-vnc-xfce-firefox-g3:vnc-novnc
+USER root
 
 ENV DISPLAY=:1 \
     VNC_PORT=5901 \
