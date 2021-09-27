@@ -20,7 +20,7 @@ WORKDIR $HOME
 
 ADD ./add_stuff/ $INST_SCRIPTS/
 ADD ./bin_new/ /usr/bin/
-RUN chmod +x /usr/bin/geckodriver
+RUN chmod a+x /usr/bin/geckodriver
 RUN cp /usr/bin/geckodriver /usr/bin/geckodriver13
 
 RUN find $INST_SCRIPTS -name '*.sh' -exec chmod a+x {} +
