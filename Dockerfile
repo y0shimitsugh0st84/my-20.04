@@ -22,10 +22,11 @@ ADD ./bin_new/ /usr/bin/
 #ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
 #USER headless
 ### Install some common tools
-RUN $INST_SCRIPTS/install_tools.sh
+#RUN $INST_SCRIPTS/install_tools.sh
 
 #EXPOSE ${VNC_PORT}
 USER 0
-
+RUN find $INST_SCRIPTS -name '*.sh' -exec chmod a+x {} +
+RUN $INST_SCRIPTS/install_tools.sh
 
 ENTRYPOINT [ "/usr/bin/tini", "--", "/dockerstartup/startup.sh" ]
