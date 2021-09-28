@@ -22,7 +22,7 @@ locale-gen en_US.UTF-8
 
 apt install --fix-missing -y 
 apt-get clean -y
-pip3 install pymysql pyvirtualdisplay faker-e164 Faker PySocks stem  bs4 selenium  ConfigParser lxml  speechrecognition requests pyvirtualdisplay pydub
+pip3 install pymysql pyvirtualdisplay faker-e164 Faker PySocks stem  bs4 selenium==4.0.0.a7  ConfigParser lxml  speechrecognition requests pyvirtualdisplay pydub
 
 
 
