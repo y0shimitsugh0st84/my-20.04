@@ -5,7 +5,7 @@ RUN id
 
 
 ENV VNC_PORT=5901 \
-    NO_VNC_PORT=6901
+    NO_VNC_PORT=6901 \
     INST_SCRIPTS=/headless/install
 
 
